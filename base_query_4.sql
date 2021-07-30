@@ -8,3 +8,4 @@ Where i.location_id = l.location_id
 	And quantity_shipped > invoice_quantity
 Group By i.Location_id, Location_name, i.sales_class_id, sales_class_desc, t.time_year, t.time_month
 Order By time_year, time_month
+
