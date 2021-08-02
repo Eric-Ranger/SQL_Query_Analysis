@@ -1,6 +1,7 @@
-Select job_id, location_name, time_year, time_month, profit_margin, Cum_Dist_CarryCost
-FROM
-	( SELECT *, 
-	 	CUME_DIST() OVER(ORDER BY profit_margin) As Cum_Dist_CarryCost
-	  FROM per_rank_job_margins) X
-WHERE Cum_Dist_CarryCost >= .95
+Select X1.job_id, X1.location_name, X1.time_year, X1.time_month, 
+	round(X1.profit_margin::numeric,4) As profit_margin, round(X1.profit_margin_percent_rank::numeric,2) As percent_rank
+From
+	(Select job_id, location_name, time_year, time_month, profit_margin,
+	 		Percent_Rank() Over(Order by profit_margin) As profit_margin_percent_rank
+	 From profit_margin_rank) As X1
+Where profit_margin_percent_rank > .95
