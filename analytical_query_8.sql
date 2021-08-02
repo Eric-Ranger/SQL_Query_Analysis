@@ -1,5 +1,5 @@
 Select X1.sales_class_desc, X1.year_invoice_sent, Sum_qty_returned, 
-	(Sum_qty_returned::numeric/total_qty_returned::numeric) As qty_returned_over_total_qty
+	round((Sum_qty_returned::numeric/total_qty_returned::numeric),4) As qty_returned_over_total_qty
 From(
 	Select sales_class_desc, t.time_year As year_invoice_sent,
 		Sum(quantity_shipped - invoice_quantity) As Sum_qty_returned
@@ -15,4 +15,4 @@ From(
 	Group By t.time_year) As X2
 	
 Where X1.year_invoice_sent = X2.year_invoice_sent
-Order By X1.year_invoice_sent, sum_qty_returned
+Order By (Sum_qty_returned::numeric/total_qty_returned::numeric) Desc
