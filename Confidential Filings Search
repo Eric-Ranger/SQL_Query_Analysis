@@ -1,4 +1,4 @@
-Use operations;
+Use Documents;
 
 --Temp Table with OFS
 IF OBJECT_ID('tempdb..#ofs') IS NOT NULL BEGIN DROP TABLE #ofs END
@@ -31,7 +31,7 @@ SELECT
 	,NLR.CountyNum
 	,NLR.County
 INTO #ofs
-FROM [OdyReporting].[Report].[OFSReporting] OFS
+FROM [Joureporting].[Report].[OFSReporting] OFS
 	Left Join OdyReporting.dbo.NodeListReporting NLR ON OFS.Location = NLR.OrgUnitName
 	Left Join OdyReporting.Shared.DateDim DD ON OFS.DateSubmittedKey = DD.DateKey
 	Left Join OdyReporting.Shared.DateDim DD2 ON OFS.DateReviewKey = DD2.DateKey
@@ -109,7 +109,7 @@ From doc d
 			CAH.CaseID
 			,CAH.CaseNbr
 			,NLR.CountyNum
-		From Justice.dbo.CaseAssignHist CAH
+		From Law.dbo.CaseAssignHist CAH
 			Join OdyReporting.dbo.NodeListReporting NLR ON CAH.NodeID = NLR.NodeID
 			) CAHsub ON d.parentID = CAHsub.caseID And d.ParentTypeID = 1 
 	)
