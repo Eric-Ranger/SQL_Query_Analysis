@@ -1,5 +1,5 @@
 DECLARE 
-		@PartySwitch INT, --switch between adult and Juvenile
+	@PartySwitch INT, --switch between adult and Juvenile
         @DateRange Date; -- Date Range for the Case
 
 SET @PartySwitch = 0 -- 0 For Adult, 1 for Juvenile
@@ -63,7 +63,7 @@ IF @PartySwitch < 1 -- Adult
 	)
 	Select Distinct 
 		Case
-			When FirstName = 'Raven' Then 9625639
+		  When FirstName = 'dummy' Then 555555 - fake names for 
 		  Else dp.PartyID 
 		End As PartyID,
 		ARR.FirstName,
@@ -97,7 +97,7 @@ Else  -- Juvenile
 		)
 	Select Distinct 
 		Case
-			When FirstName = 'Raven' Then 9625639
+			When FirstName = 'dummy' Then 555555
 			Else dp.PartyID 
 		End As PartyID,
 		JRR.FirstName,
