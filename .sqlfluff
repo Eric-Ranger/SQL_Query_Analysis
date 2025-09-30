@@ -1,0 +1,8 @@
+[sqlfluff]
+dialect = tsql
+templater = jinja
+
+[sqlfluff:rules]
+max_line_length = 120
+capitalisation_policy = upper
+comma_style = trailing
