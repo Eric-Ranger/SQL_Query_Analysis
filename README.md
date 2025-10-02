@@ -1,45 +1,25 @@
 # SQL Query Analysis
 
-A tidy, reproducible home for your ad‑hoc and reusable T‑SQL queries.
+A small portfolio of four SQL queries showcasing different analysis techniques.  
+Each script is standalone, clearly documented, and ready to run in SQL Server / Azure Synapse (T-SQL).
 
-## What’s inside
-- **/src** — your finalized SQL scripts )
-- **/workbench** — scratch/WIP queries
-- **/ddl** — future table/UDF/proc definitions
-- **/tests** — seed data + verification queries
-- **/.github/workflows** — SQLFluff CI linting
-- **/.devcontainer** — optional VS Code/Codespaces environment
-- **.sqlfluff** — lint rules (T‑SQL)
-- **.pre-commit-config.yaml** — local lint/format on commit
-- **.editorconfig** — consistent indentation & EOLs
-- **scripts** — helper commands
+## 📂 Queries
 
-## How to use
-```bash
-# (optional) install pre-commit
-pip install pre-commit && pre-commit install
+- **background_party_match.sql**  
+  Joins datasets to match party information across multiple tables.
 
-# lint everything
-sqlfluff lint .
+- **confidential_filing_search.sql**  
+  Filters filings to find confidential entries based on specific criteria.
 
-# try fixing common issues
-sqlfluff fix .
-```
+- **county_data_pull.sql**  
+  Extracts county-level data for reporting or downstream analysis.
 
-## Files catalog
-| File | Purpose |
-|---|---|
-| Background Party Match.sql | Joins background data to party affiliation; latest match per person. |
-| Confidential Filing Search.sql | Text pattern search across filings; intended for full‑text or LIKE scans. |
-| County Data Pull.sql | Aggregations by county/FIPS with rollups. |
-| Dumby variables on multiple categories.sql | One‑hot/dummy‑variable expansion for multi‑category fields. |
+- **dummy_variables_multiple_categories.sql**  
+  Transforms categorical fields into dummy variables for statistical or ML modeling.
 
-## Conventions
-- Keywords UPPERCASE, identifiers `snake_case` or `CamelCase` (pick one).
-- Prefer CTEs with descriptive names: `cte_party_matches`, `cte_county_rollup`.
-- Parameterize filters via `DECLARE @param` for reproducibility.
-- Guardrails: `SET NOCOUNT ON; SET XACT_ABORT ON;` around DML; use transactions for writes.
+## 🚀 How to Use
 
-## CI & Dev Container
-- Pushes/PRs run SQLFluff (see `.github/workflows/sqlfluff.yml`).
-- Open in VS Code Dev Container / Codespaces for a ready‑to‑run environment with `sqlcmd` and `sqlfluff` installed.
+1. Clone the repo:
+
+   ```bash
+   git clone https://github.com/Eric-Ranger/SQL_Query_Analysis.git
