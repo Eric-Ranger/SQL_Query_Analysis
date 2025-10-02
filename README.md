@@ -3,7 +3,7 @@
 A small portfolio of four SQL queries showcasing different analysis techniques.  
 Each script is standalone, clearly documented, and ready to run in SQL Server / Azure Synapse (T-SQL).
 
-## 📂 Queries
+##  Queries
 
 - **background_party_match.sql**  
   Joins datasets to match party information across multiple tables.
@@ -17,7 +17,7 @@ Each script is standalone, clearly documented, and ready to run in SQL Server / 
 - **dummy_variables_multiple_categories.sql**  
   Transforms categorical fields into dummy variables for statistical or ML modeling.
 
-## 🚀 How to Use
+## How to Use
 
 1. Clone the repo:
 
