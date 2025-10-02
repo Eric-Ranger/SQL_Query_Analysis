@@ -3,7 +3,7 @@
 A tidy, reproducible home for your ad‑hoc and reusable T‑SQL queries.
 
 ## What’s inside
-- **/src** — your finalized SQL scripts (copied from the repo; paste the contents into the placeholders)
+- **/src** — your finalized SQL scripts )
 - **/workbench** — scratch/WIP queries
 - **/ddl** — future table/UDF/proc definitions
 - **/tests** — seed data + verification queries
@@ -33,8 +33,6 @@ sqlfluff fix .
 | Confidential Filing Search.sql | Text pattern search across filings; intended for full‑text or LIKE scans. |
 | County Data Pull.sql | Aggregations by county/FIPS with rollups. |
 | Dumby variables on multiple categories.sql | One‑hot/dummy‑variable expansion for multi‑category fields. |
-
-> Heads‑up: I couldn’t programmatically fetch file **contents** from GitHub in this environment, so the SQL files in `/src` are **placeholders** with headers. Paste your actual query text into each file (same filenames).
 
 ## Conventions
 - Keywords UPPERCASE, identifiers `snake_case` or `CamelCase` (pick one).
